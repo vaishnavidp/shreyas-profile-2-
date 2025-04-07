@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MN SHREYAS - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- GSAP and ScrollTrigger for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background elements will be inserted by JavaScript -->
+    
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">MN SHREYAS</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#work" class="nav-link">WORK</a>
+                <a href="#about" class="nav-link">ABOUT</a>
+                <a href="#skills" class="nav-link">SKILLS</a>
+                <a href="#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="about-hero">
+        <div class="about-content-wrapper">
+            <div class="about-main">
+                <h1 class="about-title">About Me</h1>
+                <div class="about-description">
+                    <p class="lead-text">Creative Developer crafting digital experiences</p>
+                    <div class="about-text">
+                        <p>a Data Science grad student at the University of Houston (4.0 GPA), driven by a passion for solving real-world problems with data and AI.
+
+                            With hands-on experience in machine learning, computer vision, and IoT, I've built projects like smart parking systems and real-time video analysis tools. My background spans embedded systems, cloud tools, and data visualization—backed by leadership roles and a track record of impact.
+                            
+                            I turn complex data into actionable insights and love building smart, scalable solutions.
+                            
+                            </p>
+                    </div>
+                    <div class="tech-stack">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-track">
+                                    <!-- Languages & Programming -->
+                                    <div class="tech-tag">Python</div>
+                                    <div class="tech-tag">NumPy</div>
+                                    <div class="tech-tag">Pandas</div>
+                                    <div class="tech-tag">OpenCV</div>
+                                    <div class="tech-tag">Shell Scripting</div>
+                                    <div class="tech-tag">C/C++</div>
+                                    <div class="tech-tag">JavaScript</div>
+                                    <div class="tech-tag">HTML/CSS</div>
+                                    <div class="tech-tag">SQL</div>
+                                    
+                                    <!-- Data Science & ML -->
+                                    <div class="tech-tag">Scikit-learn</div>
+                                    <div class="tech-tag">TensorFlow</div>
+                                    <div class="tech-tag">Edge AI</div>
+                                    <div class="tech-tag">CNN</div>
+                                    <div class="tech-tag">Data Visualization</div>
+                                    
+                                    <!-- Web & App -->
+                                    <div class="tech-tag">PHP</div>
+                                    <div class="tech-tag">LIGHTTPD</div>
+                                    <div class="tech-tag">MySQL</div>
+                                    <div class="tech-tag">Web APIs</div>
+                                    
+                                    <!-- Cloud & Tools -->
+                                    <div class="tech-tag">Google Cloud</div>
+                                    <div class="tech-tag">Git/GitHub</div>
+                                    <div class="tech-tag">Jupyter</div>
+                                    <div class="tech-tag">VS Code</div>
+                                    
+                                    <!-- IoT & Embedded -->
+                                    <div class="tech-tag">Arduino</div>
+                                    <div class="tech-tag">Raspberry Pi</div>
+                                    <div class="tech-tag">Embedded C</div>
+                                    
+                                    <!-- Duplicate for seamless loop -->
+                                    <div class="tech-tag">Python</div>
+                                    <div class="tech-tag">NumPy</div>
+                                    <div class="tech-tag">Pandas</div>
+                                    <div class="tech-tag">OpenCV</div>
+                                    <div class="tech-tag">Shell Scripting</div>
+                                    <div class="tech-tag">C/C++</div>
+                                    <div class="tech-tag">JavaScript</div>
+                                    <div class="tech-tag">HTML/CSS</div>
+                                    <div class="tech-tag">SQL</div>
+                                    <div class="tech-tag">Scikit-learn</div>
+                                    <div class="tech-tag">TensorFlow</div>
+                                    <div class="tech-tag">Edge AI</div>
+                                    <div class="tech-tag">CNN</div>
+                                    <div class="tech-tag">Data Visualization</div>
+                                    <div class="tech-tag">PHP</div>
+                                    <div class="tech-tag">LIGHTTPD</div>
+                                    <div class="tech-tag">MySQL</div>
+                                    <div class="tech-tag">Web APIs</div>
+                                    <div class="tech-tag">Google Cloud</div>
+                                    <div class="tech-tag">Git/GitHub</div>
+                                    <div class="tech-tag">Jupyter</div>
+                                    <div class="tech-tag">VS Code</div>
+                                    <div class="tech-tag">Arduino</div>
+                                    <div class="tech-tag">Raspberry Pi</div>
+                                    <div class="tech-tag">Embedded C</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cta">
+                    <a href="#work" class="primary-btn pulse">View My Work</a>
+                    <a href="#contact" class="secondary-btn">Get in Touch</a>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="profile-container">
+                    <div class="profile-frame">
+                        <img src="Untitled design (3).png" alt="Profile Photo" class="profile-image">
+                        <div class="profile-overlay">
+                            <div class="overlay-content">
+                                <p class="overlay-quote">"Design is not just what it looks like and feels like. Design is how it works."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <section class="experience">
+        <div class="section-header">
+            <h2>Education & Experience</h2>
+            <p>My professional journey</p>
+        </div>
+        <div class="experience-content">
+            <div class="experience-highlights">
+                <div class="education-card">
+                    <div class="education-logo">
+                        <img src="unilogo.png" alt="University of Houston Logo">
+                    </div>
+                    <div class="education-info">
+                        <h3 class="education-name">University of Houston, Texas, USA
+</h3>                   <P class="CGPA-UNI">CGPA-4.0/4.0</P>
+                        <p class="education-degree"> Master of Science in Data Science</p>
+                        <p class="education-year">2023 - Present</p>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-logo">
+                        <img src="VTU-Logo-250x250-1.png" alt="PES University Logo">
+                    </div>
+                    <div class="education-info">
+                        <h3 class="education-name">Atria Institute of Technology</h3>
+                        <p class="CGPA-UNI">CGPA-8.5/10</p>
+                        <p class="education-degree">Bachelor of Technology in Computer Science</p>
+                        <p class="education-year">2019 - 2023</p>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sept 2023 - Present</div>
+                        <h3>International Student Mentor</h3>
+                        <p class="timeline-company">AdmitKard</p>
+                        <p class="timeline-description">Guiding aspiring international students with university selection, application strategy, and decision-making. Supporting students through the transition journey and helping them reach top global institutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">May 2022 - May 2023</div>
+                        <h3>Junior Data Analyst</h3>
+                        <p class="timeline-company">Konigtronics (OPC) Pvt Ltd</p>
+                        <p class="timeline-description">Performed data acquisition from open-source servers, followed by preprocessing and visualization for decision-making. Collaborated with cross-functional teams to identify process improvements and helped define system governance policies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Sept 2022 - Oct 2022</div>
+                        <h3>Embedded Systems Intern</h3>
+                        <p class="timeline-company">Bharat Electronics Limited</p>
+                        <p class="timeline-description">Developed backend code for satellite component monitoring using PHP, Shell Script, and LIGHTTPD server. Gained hands-on experience with embedded systems and product development in a real-world R&D environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="work">
+        <div class="section-header">
+            <h2>Selected Projects</h2>
+            <p>A showcase of my recent work and experiments</p>
+        </div>
+        
+        <!-- 3D Card Stack Container -->
+        <div class="card-stack-container">
+            <div class="projects-grid">
+                <article class="project-card" data-depth="0.1">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <img src="iot.png" alt="Smart Parking Project">
+                            <h3>Smart Parking for Urban Cities</h3>
+                            <p>IoT & Edge AI</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="project-details">
+                                <h3> Smart Parking for Urban Cities</h3>
+                                <p>IoT & Edge AI</p>
+                                <p class="project-description">A smart parking system using computer vision and IoT to optimize parking in urban areas.</p>
+                                <a href="https://www.canva.com/design/DAFZDIfdtCw/kV2__hzziwnMgU9MOlsWbg/view" target="_blank" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-depth="0.2">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <img src="bgrem.png" alt="ML Analytics Dashboard">
+                            <h3>Background Subtraction System for Real-Time Video Streams
+</h3>
+                            <p>Python, OpenCV, Computer Vision, Digital Image Processing</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="project-details">
+                                <h3>Background Subtraction System for Real-Time Video Streams
+</h3>
+                                <p>Python, OpenCV, Computer Vision, Digital Image Processing        </p>
+                                <p class="project-description">Real-time object detection by separating foreground from static backgrounds.
+</p>
+                                <a href="https://github.com/ShreyasMysoreNarayana/Real-Time-Backgroud-Subtraction-of-Video-" target="_blank" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-depth="0.3">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <img src="linked.png" alt="Computer Vision System">
+                            <h3>linkedin Easy Apply Automation</h3>
+                            <p>Python, Selenium,  Flask</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="project-details">
+                                <h3>linkedin Easy Apply Automation</h3>
+                                <p>Python, Selenium,  Flask</p>
+                                <p class="project-description">Automated LinkedIn tool using Python and Selenium to streamline connection requests, messaging, and data extraction.</p>
+                                <a href="https://github.com/ShreyasMysoreNarayana/Linked_Easy_Apply_Automation" target="_blank" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-depth="0.4">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <img src="sysnet.jpg" alt="Cloud Platform">
+                            <h3>SYSNET_ANALYSIS</h3>
+                            <p>Python, Pandas, NumPy, Scikit-learn, LDA,Python, Pandas, NumPy, Scikit-learn, LDA, Matplotlib/Seaborn</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="project-details">
+                                <h3>SYSNET_ANALYSIS</h3>
+                                <p>Python, Pandas, NumPy, Scikit-learn, LDA,Python, Pandas, NumPy, Scikit-learn, LDA, Matplotlib/Seaborn</p>
+                                <p class="project-description">Performed feature selection on Synset data using LASSO, LDA, and Genetic Algorithms to optimize preprocessing and enhance model performance.</p>
+                                <a href="https://github.com/ShreyasMysoreNarayana/SYNSET_ANALYSIS" target="_blank" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card" data-depth="0.6">
+                    <div class="card-content">
+                        <div class="card-front">
+                            <img src="ChatGPT Image Apr 3, 2025, 10_48_19 AM.png" alt="Data Visualization">
+                            <h3>Movie Recommendation System</h3>
+                            <p>R, Python, recommenderlab, scikit-learn, MovieLens 20M Dataset, Association Rule Mining.</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="project-details">
+                                <h3>Movie Recommendation System</h3>
+                                <p>R, Python, recommenderlab, scikit-learn, MovieLens 20M Dataset, Association Rule Mining.</p>
+                                <p class="project-description">Personalized movie recommendation engine using collaborative filtering, content-based filtering, and hybrid models on the MovieLens dataset.</p>
+                                <a href="https://github.com/ShreyasMysoreNarayana/DM-PROJECT-Group-3" target="_blank" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates-preview">
+        <div class="section-header">
+            <h2>Certificates</h2>
+            <p>My professional achievements and completed courses</p>
+        </div>
+        <div class="certificates-cta">
+            <a href="certificates.html" class="primary-btn float">View All Certificates</a>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="section-header">
+            <h2>Skills & Expertise</h2>
+            <p>Technologies I work with</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Frontend</h3>
+                <ul class="skill-list">
+                    <li>HTML5 & CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js</li>
+                    <li>Vue.js</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Backend</h3>
+                <ul class="skill-list">
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>MongoDB</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <ul class="skill-list">
+                    <li>Git & GitHub</li>
+                    <li>Docker</li>
+                    <li>VS Code</li>
+                    <li>Figma</li>
+        </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Let's Connect</h2>
+            <p>Get in touch for collaborations</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i data-feather="mail"></i>
+                    <a href="mailto:contact@example.com">contact@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i data-feather="github"></i>
+                    <a href="https://github.com/yourusername">github.com/yourusername</a>
+                </div>
+                <div class="contact-item">
+                    <i data-feather="linkedin"></i>
+                    <a href="https://linkedin.com/in/yourusername">linkedin.com/in/yourusername</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 MN SHREYAS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i data-feather="twitter"></i></a>
+                <a href="#"><i data-feather="instagram"></i></a>
+                <a href="#"><i data-feather="linkedin"></i></a>
+                <a href="#"><i data-feather="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

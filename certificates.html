@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates - MN SHREYAS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .certificates-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1f25 0%, #242d3b 100%);
+            padding: 120px 24px 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificates-page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .certificates-page .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .certificates-page .section-header h1 {
+            font-size: 4rem;
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .certificates-page .section-header p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cert-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+        }
+
+        .cert-badge {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .cert-badge i {
+            color: #ffffff;
+            width: 24px;
+            height: 24px;
+        }
+
+        .cert-content h3 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .cert-issuer {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 8px;
+        }
+
+        .cert-date {
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+            font-size: 0.9rem;
+        }
+
+        .cert-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .cert-skills span {
+            background: rgba(255,255,255,0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .cert-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.1);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-link:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .certificates-page {
+                padding: 100px 16px 40px;
+            }
+
+            .certificates-page .section-header h1 {
+                font-size: 3rem;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Certificate Card Link Styles */
+        .cert-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-card-link:hover .cert-card {
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .cert-card-link:hover .cert-badge {
+            transform: scale(1.1) rotate(10deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .cert-card-link:hover .cert-skills span {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Remove the existing hover styles from cert-card since they're now on the link */
+        .cert-card {
+            cursor: pointer;
+        }
+
+        .cert-card:hover {
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header class="header">
+        <nav class="nav-container">
+            <a href="/" class="logo">MN SHREYAS</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="index.html#work" class="nav-link">WORK</a>
+                <a href="index.html#about" class="nav-link">ABOUT</a>
+                <a href="index.html#skills" class="nav-link">SKILLS</a>
+                <a href="index.html#contact" class="nav-link">CONTACT</a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i data-feather="menu"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="certificates-page">
+        <div class="section-header">
+            <h1>My Certificates</h1>
+            <p>Professional achievements and completed courses</p>
+        </div>
+        <div class="cert-grid">
+            <a href="https://drive.google.com/file/d/1IZ9-M2NJark6GfD4KVNzQEckU5yZQFnQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Intergrate with Machine Learning API </h3>
+                        <div class="cert-issuer">Google & Coursera</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Data Analysis</span>
+                            <span>SQL</span>
+                            <span>R Programming</span>
+                            <span>Tableau</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1HavM2ySmgyGrHqNV9dUTIGmc70w-n9cA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Machine Learning Specialization</h3>
+                        <div class="cert-issuer">Stanford University & DeepLearning.AI</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Machine Learning</span>
+                            <span>Deep Learning</span>
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.credly.com/badges/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>AWS Certified Cloud Practitioner</h3>
+                        <div class="cert-issuer">Amazon Web Services</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Cloud Computing</span>
+                            <span>AWS Services</span>
+                            <span>Cloud Security</span>
+                            <span>Cloud Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="cpu"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Integrate with Machine Learning APIs</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Machine Learning</span>
+                            <span>Cloud APIs</span>
+                            <span>AI Integration</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="cloud"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Perform Foundational Infrastructure Tasks</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Cloud Infrastructure</span>
+                            <span>DevOps</span>
+                            <span>System Administration</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="box"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Deploy to Kubernetes in Google Cloud</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Kubernetes</span>
+                            <span>Containerization</span>
+                            <span>Cloud Deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="settings"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Set Up and Configure a Cloud Environment</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Cloud Configuration</span>
+                            <span>Environment Setup</span>
+                            <span>Cloud Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="server"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Deploy and Manage Cloud Environments</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Cloud Management</span>
+                            <span>DevOps</span>
+                            <span>System Administration</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="database"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Create and Manage Cloud Resources</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Resource Management</span>
+                            <span>Cloud Computing</span>
+                            <span>Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="shield"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Build and Secure Networks in Google Cloud</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Network Security</span>
+                            <span>Cloud Networking</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="activity"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Explore Machine Learning Models</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Machine Learning</span>
+                            <span>AI Models</span>
+                            <span>Data Science</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="bar-chart-2"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Insights from Data with BigQuery</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>BigQuery</span>
+                            <span>Data Analysis</span>
+                            <span>Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="code"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Engineer Data in Google Cloud</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Data Engineering</span>
+                            <span>ETL</span>
+                            <span>Data Pipelines</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.cloudskillsboost.google/public_profiles/XXXXXX" target="_blank" rel="noopener noreferrer" class="cert-card-link">
+                <div class="cert-card">
+                    <div class="cert-badge">
+                        <i data-feather="book"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Diploma of Completion</h3>
+                        <div class="cert-issuer">Google Cloud</div>
+                        <div class="cert-date">📅 2023</div>
+                        <div class="cert-skills">
+                            <span>Cloud Computing</span>
+                            <span>Data Science</span>
+                            <span>Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 MN SHREYAS. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i data-feather="twitter"></i></a>
+                <a href="#"><i data-feather="instagram"></i></a>
+                <a href="#"><i data-feather="linkedin"></i></a>
+                <a href="#"><i data-feather="github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
